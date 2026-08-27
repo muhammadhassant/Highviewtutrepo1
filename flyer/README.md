@@ -4,7 +4,7 @@ Flyer content from the original Ealing flyer, rebuilt for clarity and print.
 
 ## Which file to print
 
-**`highview-flyer-a5`** is the one to use — laid out natively for A5 (148 × 210mm).
+Print one of the two **A5** files — both are laid out natively for A5 (148 × 210mm).
 Do **not** print the A4 files scaled down to A5: that drops the body text to about
 6pt, past comfortable reading. The A5 version is a real relayout, not a shrink —
 two card columns instead of three, with the parent review running full width, and
@@ -14,7 +14,8 @@ The two A4 files are kept as the earlier full-size cuts:
 
 | File | Page | Notes |
 | --- | --- | --- |
-| `highview-flyer-a5` | **A5** | **Print this one.** |
+| `highview-flyer-a5` | **A5** | Led by the standard: "A/A* at A-Level. 7 to 9 at GCSE." |
+| `highview-flyer-a5-goal` | **A5** | Led by a time-bound goal: "…&nbsp;in 12 months". See the note below. |
 | `highview-flyer-compact` | A4 | Short card headings, no subheadings. |
 | `highview-flyer` | A4 | Tutors heading is a full sentence; student card has a subheading. |
 
@@ -44,3 +45,9 @@ Each ships three files:
 - The PDFs are trim-size with no bleed. Most online printers handle this fine, but
   if yours asks for 3mm bleed on a full-colour background, say so and it can be
   re-exported oversized.
+- The `-goal` version leads with "in 12 months", which is an objective claim rather
+  than an aspiration. It is worded as a stated goal ("Our goal for every student")
+  rather than a promise, which is a materially weaker claim and easier to stand
+  behind if anyone asks you to evidence it. If you reword it as a guarantee, be
+  ready to substantiate it — note the money-back guarantee covers the first two
+  sessions, not grades.
