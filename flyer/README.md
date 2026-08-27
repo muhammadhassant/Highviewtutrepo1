@@ -51,3 +51,7 @@ Each ships three files:
   to stand behind if anyone asks you to evidence it. If you reword it as a guarantee, be
   ready to substantiate it — note the money-back guarantee covers the first two
   sessions, not grades.
+- The tutor card is filled gold on both A5 cuts, to pull the eye to it. Its text
+  sits at 84-86% navy on that gold rather than the 72% used elsewhere, because
+  low-contrast small text on a light ground is much harder to read on paper than
+  on screen. If you edit that card, keep the text dark.
