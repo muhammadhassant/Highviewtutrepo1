@@ -6,7 +6,7 @@ Two cuts of the same sheet — pick one, they are otherwise identical:
 | Version | Card headings | Student card |
 | --- | --- | --- |
 | `highview-flyer` | Tutors heading is a full sentence ("Our tutors include university lecturers & professionals at global firms") | Has a subheading |
-| `highview-flyer-compact` | All three short; tutors heading fits two lines | No subheading |
+| `highview-flyer-compact` | All three short ("Our tutors are university lecturers & professionals"); tutors heading fits two lines | No subheading |
 
 Each version ships three files:
 
