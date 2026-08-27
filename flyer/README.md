@@ -31,8 +31,16 @@ Each ships three files:
 
 - Fonts (Playfair Display, Source Sans 3) are embedded in every HTML file, so the
   flyer prints identically on any machine, online or not. Nothing to download.
-- The QR code encodes `https://wa.me/447392202168` and is drawn as vector SVG, so
-  it stays sharp at any print size.
+- The QR code opens WhatsApp with a message already typed:
+  `Hi Highview Tutors, I'd like to book a lesson for:` — the parent's cursor lands
+  at the end, so they just add the details and send. It is drawn as vector SVG, so
+  it stays sharp at any size.
+- **Do not shrink the QR below 20mm.** The prefilled message makes it a 41-module
+  symbol; at 20mm that is ~0.41mm per module, which decodes reliably at 300dpi with
+  some blur. At the old 16mm it is borderline. If you ever lengthen the message the
+  symbol gets denser again — re-check before printing. Error correction is level M
+  (15%), which is what buys the size; a longer message or a smaller code would need
+  a rethink rather than a tweak.
 - To edit copy, change the text in the `.html` and re-export the PDF. Colours and
   type sizes are CSS variables at the top of the `<style>` block (`--gold`,
   `--ink`, `--paper` and friends).
