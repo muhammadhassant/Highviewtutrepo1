@@ -55,3 +55,8 @@ Each ships three files:
   sits at 84-86% navy on that gold rather than the 72% used elsewhere, because
   low-contrast small text on a light ground is much harder to read on paper than
   on screen. If you edit that card, keep the text dark.
+- The parent quote is set in Source Sans 3 italic, not Playfair. Playfair is a
+  high-contrast serif whose hairlines close up at small sizes when reversed out
+  of a dark ground on press — it read fine on screen and poorly on paper. Keep
+  small reversed text in the sans; Playfair is fine at the larger sizes and where
+  it sits dark-on-gold.
