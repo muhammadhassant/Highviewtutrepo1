@@ -1,12 +1,20 @@
 # Highview Tutors — A4 flyer
 
 Flyer content from the original Ealing flyer, rebuilt for clarity and print.
+Two cuts of the same sheet — pick one, they are otherwise identical:
+
+| Version | Card headings | Student card |
+| --- | --- | --- |
+| `highview-flyer` | Tutors heading is a full sentence ("Our tutors include university lecturers & professionals at global firms") | Has a subheading |
+| `highview-flyer-compact` | All three short; tutors heading fits two lines | No subheading |
+
+Each version ships three files:
 
 | File | What it's for |
 | --- | --- |
-| `highview-flyer.html` | The source. Open in a browser, then **Print → Save as PDF** (A4, margins *None*, **Background graphics on**). |
-| `highview-flyer-A4.pdf` | Ready to send to a print shop or WhatsApp to a parent. Exactly one A4 page. |
-| `highview-flyer-preview.png` | Preview image for social posts and messages. |
+| `*.html` | The source. Open in a browser, then **Print → Save as PDF** (A4, margins *None*, **Background graphics on**). |
+| `*-A4.pdf` | Ready to send to a print shop or WhatsApp to a parent. Exactly one A4 page. |
+| `*-preview.png` | Preview image for social posts and messages. |
 
 ## Notes
 
@@ -19,3 +27,7 @@ Flyer content from the original Ealing flyer, rebuilt for clarity and print.
   block (`--gold`, `--ink`, `--paper` and friends).
 - On screen the flyer scales down to fit narrow phones; printing always uses the
   full A4 sheet.
+- The sheet is a fixed A4 with `overflow:hidden`, so content that grows past
+  the page edge gets clipped rather than spilling onto a second page. After
+  editing copy, check there is still navy margin below the green contact
+  block — if it sits flush to the edge, the sheet has overflowed.
