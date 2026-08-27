@@ -46,8 +46,8 @@ Each ships three files:
   if yours asks for 3mm bleed on a full-colour background, say so and it can be
   re-exported oversized.
 - The `-goal` version leads with "in 12 months", which is an objective claim rather
-  than an aspiration. It is worded as a stated goal ("Our goal for every student")
-  rather than a promise, which is a materially weaker claim and easier to stand
-  behind if anyone asks you to evidence it. If you reword it as a guarantee, be
+  than an aspiration. It sits under "The bar we work to", which frames it as an
+  internal standard rather than a promise — a materially weaker claim, and easier
+  to stand behind if anyone asks you to evidence it. If you reword it as a guarantee, be
   ready to substantiate it — note the money-back guarantee covers the first two
   sessions, not grades.
