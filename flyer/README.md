@@ -16,6 +16,7 @@ The two A4 files are kept as the earlier full-size cuts:
 | --- | --- | --- |
 | `highview-flyer-a5` | **A5** | Led by the standard: "A/A* at A-Level. 7 to 9 at GCSE." |
 | `highview-flyer-a5-goal` | **A5** | Led by a time-bound goal: "…&nbsp;in 12 months". See the note below. |
+| `highview-flyer-a5-white` | **A5** | The 12-month cut on a white ground. Cheaper to print. |
 | `highview-flyer-compact` | A4 | Short card headings, no subheadings. |
 | `highview-flyer` | A4 | Tutors heading is a full sentence; student card has a subheading. |
 
@@ -68,3 +69,11 @@ Each ships three files:
   of a dark ground on press — it read fine on screen and poorly on paper. Keep
   small reversed text in the sans; Playfair is fine at the larger sizes and where
   it sits dark-on-gold.
+- The white cut is a rethought palette, not an inverted one. Gold used as *type*
+  darkens to `#8A6410` (5.4:1 on white); the brand `#E3B23C` is only 1.96:1 there
+  and is unreadable as text. Bright gold survives only as a fill carrying navy on
+  top — the tutor card, the guarantee band, and the pill. If you edit the white
+  version, keep that split.
+- The white cut uses far less ink than the navy ones, which usually makes it
+  cheaper on a large run, and it will not show handling marks the way a solid dark
+  background does.
