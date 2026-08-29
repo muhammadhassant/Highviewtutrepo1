@@ -5,7 +5,7 @@ Flyer content from the original Ealing flyer, rebuilt for clarity and print.
 ## Which file to print
 
 **`highview-flyer-a5-teal` is the current one to print.** Deep teal on white, no
-headline block, tightened contact bar.
+headline block, and stacked full-width bands that read top to bottom.
 
 The earlier cuts are kept for reference. Print one of the **A5** files — both are laid out natively for A5 (148 × 210mm).
 Do **not** print the A4 files scaled down to A5: that drops the body text to about
@@ -20,7 +20,7 @@ The two A4 files are kept as the earlier full-size cuts:
 | `highview-flyer-a5` | **A5** | Led by the standard: "A/A* at A-Level. 7 to 9 at GCSE." |
 | `highview-flyer-a5-goal` | **A5** | Led by a time-bound goal: "…&nbsp;in 12 months". See the note below. |
 | `highview-flyer-a5-white` | **A5** | The 12-month cut on a white ground. Cheaper to print. |
-| `highview-flyer-a5-teal` | **A5** | **Current.** Deep teal on white, no headline block. |
+| `highview-flyer-a5-teal` | **A5** | **Current.** Deep teal on white, single column, no headline block. |
 | `highview-flyer-compact` | A4 | Short card headings, no subheadings. |
 | `highview-flyer` | A4 | Tutors heading is a full sentence; student card has a subheading. |
 
@@ -87,3 +87,9 @@ Each ships three files:
 - Padding on the QR image eats into its 20mm, because `box-sizing` is `border-box`.
   The code carries its own 4-module quiet zone, so the image takes no padding —
   do not add any back, or the code shrinks below the size that scans.
+- The teal cut is a single column: six stacked bands rather than a two-up card
+  row. Stacking costs height — each band carries its own heading, padding and
+  label — so every block is tighter than the two-column version was. There is no
+  slack left on this page: adding a line of copy anywhere will push it over, and
+  the sheet clips rather than paginating. Check for margin below the green block
+  after any edit.
