@@ -4,7 +4,10 @@ Flyer content from the original Ealing flyer, rebuilt for clarity and print.
 
 ## Which file to print
 
-Print one of the two **A5** files — both are laid out natively for A5 (148 × 210mm).
+**`highview-flyer-a5-teal` is the current one to print.** Deep teal on white, no
+headline block, tightened contact bar.
+
+The earlier cuts are kept for reference. Print one of the **A5** files — both are laid out natively for A5 (148 × 210mm).
 Do **not** print the A4 files scaled down to A5: that drops the body text to about
 6pt, past comfortable reading. The A5 version is a real relayout, not a shrink —
 two card columns instead of three, with the parent review running full width, and
@@ -17,6 +20,7 @@ The two A4 files are kept as the earlier full-size cuts:
 | `highview-flyer-a5` | **A5** | Led by the standard: "A/A* at A-Level. 7 to 9 at GCSE." |
 | `highview-flyer-a5-goal` | **A5** | Led by a time-bound goal: "…&nbsp;in 12 months". See the note below. |
 | `highview-flyer-a5-white` | **A5** | The 12-month cut on a white ground. Cheaper to print. |
+| `highview-flyer-a5-teal` | **A5** | **Current.** Deep teal on white, no headline block. |
 | `highview-flyer-compact` | A4 | Short card headings, no subheadings. |
 | `highview-flyer` | A4 | Tutors heading is a full sentence; student card has a subheading. |
 
@@ -77,3 +81,9 @@ Each ships three files:
 - The white cut uses far less ink than the navy ones, which usually makes it
   cheaper on a large run, and it will not show handling marks the way a solid dark
   background does.
+- The teal cut resets `figure{margin:0}`. Without it the QR figure carries a
+  browser default of 1em top and bottom — 8.5mm of dead space inside the green
+  contact block. The earlier A5 cuts still have it.
+- Padding on the QR image eats into its 20mm, because `box-sizing` is `border-box`.
+  The code carries its own 4-module quiet zone, so the image takes no padding —
+  do not add any back, or the code shrinks below the size that scans.
