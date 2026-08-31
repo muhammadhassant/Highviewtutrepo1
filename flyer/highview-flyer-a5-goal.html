@@ -32,7 +32,7 @@
     background-image:
       radial-gradient(120% 60% at 50% -14%, rgba(227,178,60,.13) 0%, rgba(227,178,60,0) 60%),
       linear-gradient(180deg,#0C1E41 0%, #0A182F 100%);
-    display:flex;flex-direction:column;gap:2.9mm;overflow:hidden;
+    display:flex;flex-direction:column;gap:3.9mm;overflow:hidden;
     box-shadow:0 2mm 10mm rgba(0,0,0,.45);
   }
 
@@ -168,6 +168,18 @@
   .tutors-card .tutor-note{color:rgba(11,27,58,.84)}
   .tutors-card .card-foot{color:rgba(11,27,58,.86);border-top-color:rgba(11,27,58,.3)}
 
+  /* The contact bar was an 8.6:1 value jump off the navy sheet, which is what made
+     it shout. A deeper green drops that to 3.1:1; text flips to light to suit. */
+  .contact{
+    background:linear-gradient(135deg,#0F7A36 0%, #0D6E31 55%, #0B6029 100%);
+    padding:1.8mm 2.4mm 1.8mm 4.4mm;
+  }
+  .wa-number{color:#EAFBF0}
+  .wa svg path{fill:#EAFBF0}
+  .wa-label{color:#A9DCBC}
+  .details li{color:#DCF3E4}
+  .details svg path{fill:#DCF3E4}
+
   @page{size:A5;margin:0}
   @media print{
     body{padding:0;background:#fff}
@@ -294,7 +306,7 @@
   <section class="contact">
     <div class="contact-main">
       <div>
-        <p class="wa-label">Message us on WhatsApp</p>
+        <p class="wa-label">Message us on WhatsApp &mdash; or scan to book</p>
         <div class="wa">
           <svg viewBox="0 0 32 32" aria-hidden="true">
             <path fill="#06331A" d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.8 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4c-1.1-1.7-1.6-3.7-1.6-5.7C5.2 10 10 5.2 16 5.2S26.8 10 26.8 16 22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2s-.8 1.1-1 1.3c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6 0-.2 0-.4-.1-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/>
@@ -310,7 +322,7 @@
     </div>
     <figure class="qr">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OTAiIGhlaWdodD0iNDkwIiBjbGFzcz0ic2Vnbm8iPjxnIHRyYW5zZm9ybT0ic2NhbGUoMTApIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDQ5djQ5aC00OXoiLz48cGF0aCBjbGFzcz0icXJsaW5lIiBzdHJva2U9IiMwYjFmM2YiIGQ9Ik00IDQuNWg3bTEgMGgzbTEgMGgybTIgMGgzbTEgMGgzbTEgMGgybTIgMGgybTIgMGgxbTEgMGg3bS00MSAxaDFtNSAwaDFtMSAwaDNtMyAwaDNtMiAwaDFtMSAwaDFtNCAwaDFtNCAwaDFtMiAwaDFtNSAwaDFtLTQxIDFoMW0xIDBoM20xIDBoMW0xIDBoMW0xIDBoMW0zIDBoMW0xIDBoMW0zIDBoM20yIDBoMm0xIDBoMW0yIDBoMm0xIDBoMW0xIDBoM20xIDBoMW0tNDEgMWgxbTEgMGgzbTEgMGgxbTMgMGgybTEgMGgybTIgMGgzbTEgMGgybTEgMGgybTIgMGgzbTMgMGgxbTEgMGgzbTEgMGgxbS00MSAxaDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtMiAwaDFtMiAwaDJtMSAwaDFtMiAwaDFtMSAwaDJtMiAwaDJtMSAwaDJtMSAwaDFtMSAwaDNtMSAwaDFtLTQxIDFoMW01IDBoMW0yIDBoMW0xIDBoMm0yIDBoNG0xIDBoMW0xIDBoMm0xIDBoMm01IDBoMW0xIDBoMW01IDBoMW0tNDEgMWg3bTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGg3bS0zMSAxaDFtNCAwaDJtMiAwaDFtMiAwaDJtMSAwaDFtMSAwaDJtMiAwaDFtLTMyIDFoMW0yIDBoN20xIDBoMW0xIDBoMm0xIDBoNW0xIDBoMW00IDBoM20xIDBoM20yIDBoMW0xIDBoM20tMzkgMWgybTQgMGgxbTEgMGgybTIgMGgybTMgMGgybTIgMGgzbTEgMGgybTEgMGgybTEgMGgxbTIgMGgxbS0zNyAxaDJtMSAwaDJtMSAwaDFtMSAwaDFtMyAwaDFtMiAwaDFtMSAwaDFtMiAwaDRtMiAwaDNtMSAwaDFtNSAwaDFtMSAwaDFtLTM5IDFoM200IDBoMm0yIDBoMW0xIDBoMW0yIDBoNG00IDBoMW00IDBoNm0xIDBoMm0tMzcgMWgybTMgMGgybTIgMGgxbTMgMGgzbTIgMGgybTEgMGgybTMgMGgxbTIgMGgxbTEgMGgzbTQgMGgybS0zOCAxaDNtMSAwaDJtMSAwaDFtMyAwaDJtMiAwaDFtMSAwaDFtMSAwaDRtMSAwaDJtMyAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtLTQxIDFoMW0xIDBoMW0zIDBoMW0yIDBoMW0zIDBoMW0yIDBoMW0yIDBoMW0xIDBoMW0zIDBoMW0xIDBoMW0xIDBoNm0xIDBoMm0xIDBoMm0tMzkgMWgybTMgMGgybTEgMGgxbTIgMGgxbTIgMGgxbTIgMGgybTUgMGgxbTMgMGgxbTEgMGgybTEgMGg1bS0zOSAxaDFtMSAwaDFtMSAwaDJtMiAwaDJtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtMiAwaDNtMSAwaDJtMSAwaDFtMSAwaDJtNSAwaDFtLTQwIDFoM200IDBoMm02IDBoM20xIDBoMm02IDBoM20xIDBoMW0xIDBoMW0yIDBoMm0xIDBoMW0tNDAgMWgxbTEgMGgxbTEgMGg1bTEgMGg3bTEgMGg2bTIgMGgybTIgMGgybTMgMGgybTEgMGgxbTEgMGgxbS00MCAxaDNtMSAwaDFtMSAwaDFtMSAwaDNtNyAwaDFtMyAwaDNtMiAwaDFtMSAwaDRtMiAwaDVtLTM4IDFoMm0xIDBoM20yIDBoMW0zIDBoMm0yIDBoMm0yIDBoMW0yIDBoNW0zIDBoMW0zIDBoMW0tMzkgMWgxbTEgMGg0bTEgMGg0bTIgMGgybTEgMGgxbTEgMGgybTIgMGgybTIgMGgybTMgMGgybTEgMGgxbTEgMGgybS0zNSAxaDFtMSAwaDJtMSAwaDNtMSAwaDVtMyAwaDFtMiAwaDFtMyAwaDRtMiAwaDFtMyAwaDFtLTM3IDFoMW0xIDBoMW01IDBoMW0xIDBoMm0yIDBoMW0xIDBoMm0xIDBoMW0xIDBoMm00IDBoMm01IDBoMW0xIDBoMW0tMzYgMWgxbTEgMGgxbTEgMGgxbTMgMGgxbTIgMGg0bTEgMGgybTIgMGgybTIgMGgxbTEgMGgxbTEgMGgxbTEgMGg0bTEgMGgxbTEgMGgxbS0zOCAxaDFtNyAwaDJtMSAwaDJtMiAwaDFtMiAwaDFtMSAwaDRtMSAwaDJtMSAwaDFtMSAwaDNtMSAwaDFtMSAwaDFtMSAwaDFtLTQxIDFoM20yIDBoM20xIDBoMm0yIDBoNW0xIDBoMW0yIDBoMW0zIDBoMm0yIDBoNm0xIDBoMW0yIDBoMW0tNDEgMWgybTEgMGgzbTMgMGgxbTIgMGgybTEgMGgxbTQgMGgxbTEgMGgybTIgMGgxbTMgMGgybTQgMGgzbTEgMGgxbS00MSAxaDFtMSAwaDZtNSAwaDFtMSAwaDFtNyAwaDNtMyAwaDFtMSAwaDNtMyAwaDFtMSAwaDFtLTQwIDFoMW00IDBoMW0xIDBoMm0xIDBoMW0xIDBoMW0xIDBoMW0xIDBoMm0xIDBoMm0zIDBoMm0xIDBoMW0xIDBoNW0yIDBoMm0xIDBoMW0tNDAgMWg4bTcgMGgxbTIgMGgybTIgMGg0bTEgMGgybTIgMGgzbTEgMGgybTEgMGgxbTEgMGgxbS00MSAxaDJtMSAwaDFtNCAwaDJtMSAwaDFtMSAwaDJtMyAwaDFtNCAwaDFtMSAwaDJtMSAwaDFtMiAwaDJtMSAwaDFtMyAwaDFtMSAwaDFtLTQxIDFoMm0xIDBoNm0xIDBoMW0xIDBoMW0xIDBoMW0yIDBoMm0xIDBoMW0xIDBoM20xIDBoMW0xIDBoMm0xIDBoNm0xIDBoM20tMzMgMWgxbTIgMGgybTIgMGgxbTMgMGgxbTMgMGgxbTEgMGg0bTEgMGgxbTEgMGgxbTMgMGgxbTEgMGgybS00MCAxaDdtMSAwaDJtMyAwaDFtMSAwaDRtMSAwaDFtMSAwaDJtMSAwaDFtMSAwaDFtMSAwaDJtMSAwaDFtMSAwaDFtMSAwaDFtMiAwaDFtLTQwIDFoMW01IDBoMW0xIDBoM20xIDBoNm00IDBoM20xIDBoMW0yIDBoNG0zIDBoMm0yIDBoMW0tNDEgMWgxbTEgMGgzbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTIgMGg1bTQgMGgxbTIgMGgybTIgMGg5bS00MCAxaDFtMSAwaDNtMSAwaDFtMSAwaDJtNSAwaDJtMSAwaDJtMyAwaDFtMSAwaDhtMiAwaDFtNCAwaDFtLTQxIDFoMW0xIDBoM20xIDBoMW04IDBoMW0yIDBoMm0yIDBoMW0yIDBoNW0xIDBoMW0xIDBoMW0xIDBoMm0xIDBoMW0xIDBoMW0tNDEgMWgxbTUgMGgxbTMgMGgxbTEgMGgxbTIgMGgxbTEgMGgybTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTUgMGgzbTEgMGgxbS00MSAxaDdtMSAwaDJtMyAwaDFtMTEgMGgybTQgMGgzbTIgMGgxIi8+PC9nPjwvc3ZnPgo=" alt="QR code linking to Highview Tutors on WhatsApp">
-      <figcaption>Scan to book a lesson</figcaption>
+      
     </figure>
   </section>
 
