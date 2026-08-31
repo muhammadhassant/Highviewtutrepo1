@@ -93,3 +93,7 @@ Each ships three files:
   slack left on this page: adding a line of copy anywhere will push it over, and
   the sheet clips rather than paginating. Check for margin below the green block
   after any edit.
+- The navy 12-month cut now also resets `figure{margin:0}` and keeps the contact
+  details on one line (`flex-wrap:nowrap`). Its contact block is 28.5mm, which is
+  the floor: a 20mm QR plus its caption and the block's padding. It cannot get
+  smaller without shrinking the code below the size that scans.

@@ -32,7 +32,7 @@
     background-image:
       radial-gradient(120% 60% at 50% -14%, rgba(227,178,60,.13) 0%, rgba(227,178,60,0) 60%),
       linear-gradient(180deg,#0C1E41 0%, #0A182F 100%);
-    display:flex;flex-direction:column;gap:1.7mm;overflow:hidden;
+    display:flex;flex-direction:column;gap:2.9mm;overflow:hidden;
     box-shadow:0 2mm 10mm rgba(0,0,0,.45);
   }
 
@@ -136,10 +136,11 @@
                color:var(--gold-lt);font-variant-numeric:tabular-nums}
 
   /* contact */
+  figure{margin:0}   /* UA default is 1em top and bottom — 8.5mm of dead space */
   .contact{margin-top:auto;
     background:linear-gradient(135deg,#2FE277 0%, #25D366 60%, #1FBE5A 100%);
     border-radius:2.6mm;color:#06331A;padding:2.5mm 3mm 2.5mm 4.4mm;
-    display:flex;align-items:center;justify-content:space-between;gap:3.5mm}
+    display:flex;align-items:center;justify-content:space-between;gap:2.8mm}
   .contact-main{display:flex;flex-direction:column;gap:2mm}
   .wa{display:flex;align-items:center;gap:2.2mm}
   .wa svg{width:6.2mm;height:6.2mm;flex:0 0 auto}
@@ -147,8 +148,8 @@
              color:#06331A;font-variant-numeric:tabular-nums}
   .wa-label{font-size:6pt;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
             color:rgba(6,51,26,.72);margin:0 0 .9mm}
-  .details{display:flex;flex-wrap:wrap;gap:1.1mm 3.2mm;margin:0;padding:0;list-style:none}
-  .details li{display:flex;align-items:center;gap:1.3mm;font-size:7.1pt;
+  .details{display:flex;flex-wrap:nowrap;gap:3.4mm;margin:0;padding:0;list-style:none;white-space:nowrap}
+  .details li{display:flex;align-items:center;gap:1.4mm;font-size:7.1pt;
               font-weight:600;color:rgba(6,51,26,.88)}
   .details svg{width:2.7mm;height:2.7mm;flex:0 0 auto}
   .qr{display:flex;flex-direction:column;align-items:center;gap:.9mm;flex:0 0 auto}
