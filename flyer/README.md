@@ -97,7 +97,9 @@ Each ships three files:
   one line (`flex-wrap:nowrap`). Its contact block is 23.6mm: a 20mm QR plus 1.8mm
   padding top and bottom. That is the hard floor — the code sets it, and the code
   cannot go below 20mm and still scan.
-- That block is deliberately a deep green (`#0F7A36`), not WhatsApp's bright
-  `#25D366`. Bright green is an 8.6:1 value jump off the navy sheet, which made it
-  dominate the page; the deep green is 3.1:1. Text on it is light, not dark — at
-  this value dark text drops under AA.
+- That block is no longer green at all. It uses the same navy panel surface as the
+  cards, so it reads as the last block rather than a banner; only the WhatsApp
+  glyph stays green, as the recognition cue. Bright WhatsApp green was an 8.6:1
+  value jump off the navy sheet — the loudest thing on the page.
+- The navy cut has no headline block: the masthead carries a tagline
+  ("Tutoring & career coaching · Ealing") and the subject list follows.

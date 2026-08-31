@@ -28,11 +28,11 @@
 
   .sheet{
     position:relative;width:148mm;height:210mm;flex:0 0 auto;
-    padding:7.5mm 9mm 7mm;background:var(--ink);
+    padding:8.5mm 9mm 8mm;background:var(--ink);
     background-image:
       radial-gradient(120% 60% at 50% -14%, rgba(227,178,60,.13) 0%, rgba(227,178,60,0) 60%),
       linear-gradient(180deg,#0C1E41 0%, #0A182F 100%);
-    display:flex;flex-direction:column;gap:3.9mm;overflow:hidden;
+    display:flex;flex-direction:column;gap:4.6mm;overflow:hidden;
     box-shadow:0 2mm 10mm rgba(0,0,0,.45);
   }
 
@@ -70,7 +70,7 @@
   .why-head{display:flex;align-items:center;gap:2.6mm}
   .why-head .rule{flex:1}
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:2.8mm}
-  .cards .card{display:flex;flex-direction:column;padding:2.5mm 2.8mm 2mm;gap:1.8mm}
+  .cards .card{display:flex;flex-direction:column;padding:3mm 3.1mm 2.5mm;gap:2.1mm}
   .card h2{font-size:8.6pt;font-weight:700;line-height:1.24;margin:0;
            color:var(--paper);text-wrap:balance}
   .card-body{flex:1;display:flex;flex-direction:column;gap:2.4mm;justify-content:space-between}
@@ -95,7 +95,7 @@
   .tutor-note{font-size:7.1pt;line-height:1.32;color:var(--muted)}
 
   /* review runs full width — the quote needs the room more than a third column does */
-  .review{display:flex;align-items:center;gap:4mm;padding:2.4mm 3.4mm}
+  .review{display:flex;align-items:center;gap:4mm;padding:3mm 3.4mm}
   .review-mark{display:flex;flex-direction:column;gap:1mm;flex:0 0 auto;align-items:flex-start}
   .stars{display:flex;align-items:baseline;gap:1.6mm}
   .stars span{color:var(--gold);font-size:10pt;letter-spacing:.1em;line-height:1}
@@ -126,7 +126,7 @@
   .seal{width:17mm;height:17mm;flex:0 0 auto}
 
   /* rates */
-  .rates{padding:2.4mm 3.4mm;display:flex;align-items:center;gap:3mm}
+  .rates{padding:3mm 3.4mm;display:flex;align-items:center;gap:3mm}
   .rates .eyebrow{white-space:nowrap}
   .rates .rate-list{flex:1}
   .rate-list{display:flex;justify-content:space-between;gap:2mm;margin:0;padding:0;list-style:none}
@@ -180,6 +180,25 @@
   .details li{color:#DCF3E4}
   .details svg path{fill:#DCF3E4}
 
+  .masthead{flex-direction:column;gap:1.3mm}
+  .brand{display:flex;align-items:center;gap:2.8mm}
+  .tagline{margin:0;font-size:6.4pt;font-weight:700;letter-spacing:.2em;
+           text-transform:uppercase;color:var(--gold)}
+  .tagline i{font-style:normal;color:var(--muted);padding:0 .6mm}
+
+  /* The contact bar now reads as the last panel rather than a banner: the same
+     navy surface as the cards, with the WhatsApp mark left green as the cue. */
+  .contact{
+    background:var(--ink-raise);
+    border:1px solid var(--ink-line);
+    border-radius:2.6mm;
+  }
+  .wa-number{color:var(--paper)}
+  .wa svg path{fill:#25D366}
+  .wa-label{color:var(--gold)}
+  .details li{color:var(--muted)}
+  .details svg path{fill:var(--muted)}
+
   @page{size:A5;margin:0}
   @media print{
     body{padding:0;background:#fff}
@@ -196,21 +215,20 @@
 <main class="sheet">
 
   <header class="masthead">
+    <div class="brand">
     <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
       <circle cx="24" cy="24" r="22" fill="none" stroke="#E3B23C" stroke-width="1.6"/>
       <path d="M14 28 L24 18 L34 28" fill="none" stroke="#E3B23C" stroke-width="3.4"
             stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <span class="wordmark">Highview Tutors</span>
-    <span class="locale">Ealing</span>
+    </div>
+    <p class="tagline">Tutoring &amp; career coaching <i>&middot;</i> Ealing</p>
   </header>
 
   <hr class="rule">
 
   <section class="claim">
-    <p class="eyebrow">The bar we work to</p>
-    <h1><b>A/A*</b> at A-Level &amp; <b>7 to 9</b> at GCSE</h1>
-    <div class="timeframe"><hr class="rule"><span>in 12 months</span><hr class="rule"></div>
     <ul class="subjects">
       <li>Maths</li><li>English</li><li>Science</li>
       <li>Computer Science</li><li>AI</li><li>11+</li>
