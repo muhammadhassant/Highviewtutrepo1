@@ -11,10 +11,8 @@ const review = {
   quote: 'I received an A* in A-Level Maths and am now at UCL, thanks to Highview Tutors.',
   name: 'Mustafa Ahmed',
   by: 'Former A-Level student',
+  photo: 'mustafa-ahmed.jpg', // in assets/
 };
-
-// results claim; add `stat: { ...results, placement: 'tile' | 'band' | 'review' }` to a version to show it
-export const results = { figure: '90%+', lead: 'of our students have achieved', strong: 'grade 7 or above', tail: 'at GCSE' };
 
 const fixedTimes = [
   { day: 'Monday', time: '6pm–8pm' },

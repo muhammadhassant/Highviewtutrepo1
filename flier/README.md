@@ -8,10 +8,8 @@ Three versions of the maths tutoring flier, one per venue. Finished files are in
 | `v2-chardon-house` | Singapore Road (1–2 Chardon House), West Ealing, W13 0EP | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
 | `v3-west-ealing-library` | West Ealing Community Library (opposite Sainsbury's) | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
 
-Versions 1 and 3 show Mustafa Ahmed's 5-star review above the footer (the optional `review` field in
-`src/versions.mjs`). The 90%+ results claim is ready in `results` but not shown yet: add
-`stat: { ...results, placement: 'tile' }` to a version, where placement is `tile` (panel beside the
-photo), `band` (strip under the headline) or `review` (panel inside the review box).
+Versions 1 and 3 show Mustafa Ahmed's 5-star review, with his photo (`assets/mustafa-ahmed.jpg`),
+above the footer. It is the optional `review` field in `src/versions.mjs`.
 
 Each version comes in three files:
 

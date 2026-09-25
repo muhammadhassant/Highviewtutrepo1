@@ -33,11 +33,11 @@ try {
       const footerTop = document.querySelector('.footer').getBoundingClientRect().top;
       const last = document.querySelector('.main > :last-child').getBoundingClientRect().bottom;
       const pageRect = document.querySelector('.page').getBoundingClientRect();
-      const wide = [...document.querySelectorAll('.main > *, .offer *, .stat-tile, .stat-band, .review *, .footer *')]
+      const wide = [...document.querySelectorAll('.main > *, .offer *, .review *, .footer *')]
         .filter((el) => { const r = el.getBoundingClientRect(); return r.width && (r.right > pageRect.right + 0.5 || r.left < pageRect.left - 0.5); })
         .map((el) => el.className.baseVal ?? el.className);
       // content spilling out of its own card (e.g. a price too wide for the box)
-      const spill = [...document.querySelectorAll('.offer div, .review div, .stat-band, .stat-tile')]
+      const spill = [...document.querySelectorAll('.offer div, .review div')]
         .filter((el) => el.scrollWidth > el.clientWidth + 1)
         .map((el) => el.className);
       return { gap: footerTop - last, wide, spill };
