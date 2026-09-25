@@ -27,7 +27,7 @@ export const versions = [
   {
     id: 'v2-chardon-house',
     name: 'Version 2: Chardon House, Singapore Road',
-    prices: [{ label: 'All ages 7–17', was: 25, now: 20 }],
+    prices: [{ label: 'All ages 7–17', was: 25, now: 15 }],
     where: { title: 'Singapore Road (1–2 Chardon House)', detail: 'West Ealing, London, W13 0EP' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('Chardon House'),
@@ -35,7 +35,7 @@ export const versions = [
   {
     id: 'v3-west-ealing-library',
     name: 'Version 3: West Ealing Community Library',
-    prices: [{ label: 'All ages 7–17', was: 25, now: 20 }],
+    prices: [{ label: 'All ages 7–17', was: 25, now: 15 }],
     where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),

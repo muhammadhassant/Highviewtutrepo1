@@ -5,8 +5,8 @@ Three versions of the maths tutoring flier, one per venue. Finished files are in
 | Version | Venue | Price | Times |
 | --- | --- | --- | --- |
 | `v1-highview-road` | 107 Highview Road, West Ealing, W13 0HL | £25 Year 2–6, £30 Year 7–11, £35 Year 12–13 | Flexible weekdays and weekends |
-| `v2-chardon-house` | Singapore Road (1–2 Chardon House), West Ealing, W13 0EP | £20 | Monday 6pm–8pm, Saturday 2pm–4pm |
-| `v3-west-ealing-library` | West Ealing Community Library (opposite Sainsbury's) | £20 | Monday 6pm–8pm, Saturday 2pm–4pm |
+| `v2-chardon-house` | Singapore Road (1–2 Chardon House), West Ealing, W13 0EP | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
+| `v3-west-ealing-library` | West Ealing Community Library (opposite Sainsbury's) | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
 
 Each version comes in three files:
 
