@@ -290,7 +290,7 @@ ${v.review ? reviewCard(v.review) : ''}
   <footer class="footer">
     <div class="row">
       <div class="wa">${icon('whatsapp-logo')}</div>
-      <div class="call"><div class="k">Book a <b>free</b> consultation</div><div class="num">${esc(contact.phone)}</div></div>
+      <div class="call">${v.freeConsultation ? '<div class="k">Book a <b>free</b> consultation</div>' : ''}<div class="num">${esc(contact.phone)}</div></div>
       <span class="vr"></span>
       <div class="msg"><span>Message us<br>on WhatsApp!</span>${arrow}</div>
       <div class="qr">${qr}</div>

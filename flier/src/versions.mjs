@@ -31,6 +31,7 @@ export const versions = [
     where: { title: '107 Highview Road', detail: 'West Ealing, W13 0HL' },
     when: { flexible: true, title: 'Weekdays and weekends', detail: 'Flexible timings. Enquire to book.' },
     qr: whatsapp('Highview Road'),
+    freeConsultation: false, // footer line "Book a free consultation" above the phone number
     review,
   },
   {
@@ -40,6 +41,7 @@ export const versions = [
     where: { title: 'Singapore Road (1–2 Chardon House)', detail: 'West Ealing, London, W13 0EP' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('Chardon House'),
+    freeConsultation: true,
   },
   {
     id: 'v3-west-ealing-library',
@@ -48,6 +50,7 @@ export const versions = [
     where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s, W13 9BT' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),
+    freeConsultation: false,
     review,
   },
 ];
