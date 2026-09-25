@@ -31,15 +31,20 @@ try {
     // Layout guard: fail the build if the content runs into the footer or a section spills off the page.
     const clash = await page.evaluate(() => {
       const footerTop = document.querySelector('.footer').getBoundingClientRect().top;
-      const last = document.querySelector('.guarantee').getBoundingClientRect().bottom;
+      const last = document.querySelector('.offer').getBoundingClientRect().bottom;
       const pageRect = document.querySelector('.page').getBoundingClientRect();
-      const wide = [...document.querySelectorAll('.main > *, .why *, .offer *, .guarantee *, .footer *')]
+      const wide = [...document.querySelectorAll('.main > *, .offer *, .footer *')]
         .filter((el) => { const r = el.getBoundingClientRect(); return r.width && (r.right > pageRect.right + 0.5 || r.left < pageRect.left - 0.5); })
         .map((el) => el.className.baseVal ?? el.className);
-      return { gap: footerTop - last, wide };
+      // content spilling out of its own card (e.g. a price too wide for the box)
+      const spill = [...document.querySelectorAll('.offer div')]
+        .filter((el) => el.scrollWidth > el.clientWidth + 1)
+        .map((el) => el.className);
+      return { gap: footerTop - last, wide, spill };
     });
     if (clash.gap < 8) throw new Error(`${v.id}: content ends ${Math.ceil(8 - clash.gap)}px too low for the footer`);
     if (clash.wide.length) throw new Error(`${v.id}: elements past the page edge: ${clash.wide.join(', ')}`);
+    if (clash.spill.length) throw new Error(`${v.id}: content too wide for its box: ${clash.spill.join(', ')}`);
 
     await page.locator('.page').screenshot({ path: `${base}.png` });
     await page.pdf({ path: `${base}.pdf`, width: '210mm', height: '297mm', printBackground: true, preferCSSPageSize: true });

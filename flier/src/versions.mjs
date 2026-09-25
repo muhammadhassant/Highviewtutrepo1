@@ -21,7 +21,7 @@ export const versions = [
       { label: 'Year 12–13', sub: 'A-Level', was: 40, now: 35 },
     ],
     where: { title: '107 Highview Road', detail: 'West Ealing, W13 0HL' },
-    when: { flexible: true, title: 'Flexible timings', detail: 'Weekdays and weekends. Enquire to book.' },
+    when: { flexible: true, title: 'Weekdays and weekends', detail: 'Flexible timings. Enquire to book.' },
     qr: whatsapp('Highview Road'),
   },
   {

@@ -20,7 +20,8 @@ so you can see which flier each enquiry came from.
 ## Editing and rebuilding
 
 Prices, venues, times and QR messages are in `src/versions.mjs`. The layout is in
-`src/template.mjs` and the picture of the class is drawn in `src/illustration.mjs`.
+`src/template.mjs`. The classroom photo is `assets/classroom-photo.jpg`: replace that file
+(same name) with a higher-resolution copy for sharper prints. At 1069 px wide it prints at about 145 dpi.
 
 ```sh
 npm install
@@ -29,6 +30,6 @@ npm run build                     # all versions
 npm run build -- v2-chardon-house # one version
 ```
 
-The build fails if the content would run into the footer or off the page.
+The build fails if any content runs into the footer, off the page, or out of its card.
 
-Fonts: Poppins and Patrick Hand (SIL Open Font License). Icons: Phosphor (MIT).
+Font: Poppins (SIL Open Font License). Icons: Phosphor (MIT).
