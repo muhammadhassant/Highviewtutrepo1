@@ -45,7 +45,7 @@ export const versions = [
     id: 'v3-west-ealing-library',
     name: 'Version 3: West Ealing Community Library',
     prices: [{ label: 'All ages 7–17', was: 25, now: 15 }],
-    where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s' },
+    where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s, W13 9BT' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),
     review,
