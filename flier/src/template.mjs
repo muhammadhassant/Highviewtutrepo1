@@ -7,7 +7,7 @@ import { contact } from './versions.mjs';
 
 const require = createRequire(import.meta.url);
 const asset = (name) => `data:image/jpeg;base64,${readFileSync(new URL(`../assets/${name}`, import.meta.url)).toString('base64')}`;
-const photo = asset('classroom-photo.jpg');
+const photo = asset('classroom-photo-tutor.jpg'); // stock classroom photo with the tutor's own head in place of the teacher
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -275,7 +275,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
   </section>
 
   <section class="photo">
-    <div class="frame"><img src="${photo}" alt="Teacher and pupil pointing at area formulas on a classroom blackboard"></div>
+    <div class="frame"><img src="${photo}" alt="Highview tutor and pupils pointing at area formulas on a classroom blackboard"></div>
     <div class="sym y s1">${mathSymbol('plus')}</div>
     <div class="sym n s2">${mathSymbol('minus')}</div>
     <div class="sym n s3">${mathSymbol('times')}</div>
