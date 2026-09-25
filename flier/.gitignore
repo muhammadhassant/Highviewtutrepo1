@@ -1,0 +1,3 @@
+node_modules/
+# intermediate HTML (fonts inlined); rebuilt by `npm run build`
+output/*.html
