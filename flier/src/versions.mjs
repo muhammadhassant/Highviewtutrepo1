@@ -6,6 +6,9 @@ const PHONE_INTL = '447392202168'; // 07392 202168 in international format for W
 
 const whatsapp = (note) => `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent(`Hi! Maths tutoring enquiry (${note})`)}`;
 
+// shown under the Ages / Online banner; delete `credential` from a version to hide it there
+const credential = { lead: 'Our tutors are', strong: 'university lecturers and professionals' };
+
 const fixedTimes = [
   { day: 'Monday', time: '6pm–8pm' },
   { day: 'Saturday', time: '2pm–4pm' },
@@ -23,6 +26,7 @@ export const versions = [
     where: { title: '107 Highview Road', detail: 'West Ealing, W13 0HL' },
     when: { flexible: true, title: 'Weekdays and weekends', detail: 'Flexible timings. Enquire to book.' },
     qr: whatsapp('Highview Road'),
+    credential,
   },
   {
     id: 'v2-chardon-house',
@@ -31,6 +35,7 @@ export const versions = [
     where: { title: 'Singapore Road (1–2 Chardon House)', detail: 'West Ealing, London, W13 0EP' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('Chardon House'),
+    credential,
   },
   {
     id: 'v3-west-ealing-library',
@@ -39,6 +44,7 @@ export const versions = [
     where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),
+    credential,
     // optional extras: a results banner across the foot of the photo, and a review above the footer
     stat: { figure: '90%+', lines: ['of our students have achieved', 'grade 7 or above at GCSE'] },
     review: {
