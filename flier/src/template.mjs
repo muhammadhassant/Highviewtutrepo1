@@ -65,18 +65,39 @@ const whenCard = (w) => {
   </div>`;
 };
 
-const statBanner = (st) => `
-    <div class="stat"><span class="fig">${esc(st.figure)}</span><span class="txt">${st.lines.map(esc).join('<br>')}</span></div>`;
+// Results claim (e.g. 90%+ at grade 7). `stat.placement` puts it beside the photo ('tile'),
+// in a strip under the headline ('band'), or inside the review box ('review').
+const statTile = (st) => `
+    <aside class="stat-tile">
+      <span class="ic">${icon('trophy')}</span>
+      <div class="fig">${esc(st.figure)}</div>
+      <div class="txt">${esc(st.lead)}<b>${esc(st.strong)}</b>${esc(st.tail)}</div>
+    </aside>`;
 
-const reviewCard = (r) => `
-  <section class="review">
-    <div class="qm">${icon('quotes')}</div>
-    <div>
+const statBand = (st) => `
+  <section class="stat-band">
+    <span class="ic">${icon('trophy')}</span><span class="fig">${esc(st.figure)}</span>
+    <span class="txt">${esc(st.lead)} <b>${esc(st.strong)} ${esc(st.tail)}</b></span>
+  </section>`;
+
+const reviewCard = (r, st) => {
+  const inner = `
       <div class="stars">${icon('star').repeat(5)}<span>5-star reviews</span></div>
       <p class="quote">“${esc(r.quote)}”</p>
-      <div class="by">${r.name ? `<b>${esc(r.name)}</b><span class="dot">·</span>` : ''}${esc(r.by)}</div>
-    </div>
+      <div class="by">${r.name ? `<b>${esc(r.name)}</b><span class="dot">·</span>` : ''}${esc(r.by)}</div>`;
+  if (st?.placement === 'review') {
+    return `
+  <section class="review with-stat">
+    <div class="proof-stat"><div class="fig">${esc(st.figure)}</div><div class="txt">${esc(st.lead)}<b>${esc(st.strong)}</b>${esc(st.tail)}</div></div>
+    <div class="rv">${inner}</div>
   </section>`;
+  }
+  return `
+  <section class="review">
+    <div class="qm">${icon('quotes')}</div>
+    <div>${inner}</div>
+  </section>`;
+};
 
 const offer = (v) => {
   if (v.prices.length > 1) {
@@ -155,9 +176,9 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 .burst.right { transform: scaleX(-1); }
 
 /* classroom photo + floating maths symbols */
-.photo { position: relative; flex: 1 1 0; min-height: 260px; max-height: 468px; display: flex; flex-direction: column; margin: 18px var(--side) 0; }
-.photo.has-stat { margin-bottom: 30px; }
-.photo .frame { flex: 1; border-radius: 18px; overflow: hidden; box-shadow: 7px 8px 0 var(--yellow); }
+.photo { flex: 1 1 0; min-height: 260px; max-height: 468px; display: flex; gap: 22px; margin: 18px var(--side) 0; }
+.shot { position: relative; flex: 1; display: flex; }
+.shot .frame { flex: 1; border-radius: 18px; overflow: hidden; box-shadow: 7px 8px 0 var(--yellow); }
 .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .sym { position: absolute; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; display: grid; place-items: center; box-shadow: 0 3px 0 rgba(11,26,59,.18); }
 .sym svg { width: 30px; height: 30px; stroke-width: 5.2; stroke-linecap: round; fill: none; }
@@ -171,10 +192,29 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 /* offer: prices + where/when */
 .offer { margin: 26px var(--side) 0; }
 
-/* results banner straddling the foot of the photo */
-.stat { position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; white-space: nowrap; background: var(--navy); color: #fff; border: 3px solid var(--yellow); border-radius: 16px; padding: 7px 24px 7px 20px; box-shadow: 0 5px 0 rgba(11,26,59,.18); }
-.stat .fig { font-weight: 900; font-size: 42px; letter-spacing: -1.2px; line-height: 1; color: var(--yellow); }
-.stat .txt { font-weight: 700; font-size: 15px; line-height: 1.25; }
+/* results claim, option 'tile': yellow panel beside the photo */
+.stat-tile { flex: none; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--yellow); border-radius: 18px; padding: 14px 14px; box-shadow: 6px 7px 0 var(--navy); }
+.stat-tile .ic { width: 50px; height: 50px; border-radius: 50%; background: var(--navy); display: grid; place-items: center; }
+.stat-tile .ic .icon { width: 28px; height: 28px; fill: var(--yellow); }
+.stat-tile .fig { font-weight: 900; font-size: 62px; letter-spacing: -2px; line-height: 1; margin-top: 10px; }
+.stat-tile .txt { font-size: 14px; font-weight: 600; line-height: 1.3; margin-top: 6px; text-wrap: balance; }
+.stat-tile .txt b { display: block; font-size: 20px; font-weight: 900; line-height: 1.15; margin: 3px 0; }
+
+/* results claim, option 'band': strip under the headline */
+.stat-band { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px var(--side) 0; background: var(--yellow); border-radius: 14px; padding: 7px 18px; box-shadow: 5px 6px 0 var(--navy); white-space: nowrap; }
+.stat-band .ic { flex: none; width: 38px; height: 38px; border-radius: 50%; background: var(--navy); display: grid; place-items: center; }
+.stat-band .ic .icon { width: 22px; height: 22px; fill: var(--yellow); }
+.stat-band .fig { font-weight: 900; font-size: 38px; letter-spacing: -1.2px; line-height: 1; }
+.stat-band .txt { font-size: 16px; font-weight: 600; }
+.stat-band .txt b { font-weight: 800; }
+
+/* results claim, option 'review': navy panel inside the review box */
+.review.with-stat { display: grid; grid-template-columns: 200px 1fr; padding: 0; overflow: hidden; }
+.proof-stat { background: var(--navy); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 12px; }
+.proof-stat .fig { font-weight: 900; font-size: 46px; letter-spacing: -1.4px; line-height: 1; color: var(--yellow); }
+.proof-stat .txt { font-size: 11.5px; font-weight: 500; line-height: 1.3; margin-top: 4px; }
+.proof-stat .txt b { display: block; font-size: 14px; font-weight: 800; color: var(--yellow); }
+.review.with-stat .rv { padding: 12px 22px 11px; }
 
 /* review */
 .review { position: relative; margin: 16px var(--side) 0; border: 2px solid var(--navy); border-radius: 16px; padding: 12px 84px 11px; text-align: center; }
@@ -272,17 +312,19 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
       ${burst('right')}
     </div>
   </section>
-
-  <section class="photo${v.stat ? ' has-stat' : ''}">
-    <div class="frame"><img src="${photo}" alt="Teacher and pupil pointing at area formulas on a classroom blackboard"></div>${v.stat ? statBanner(v.stat) : ''}
-    <div class="sym y s1">${mathSymbol('plus')}</div>
-    <div class="sym n s2">${mathSymbol('minus')}</div>
-    <div class="sym n s3">${mathSymbol('times')}</div>
-    <div class="sym y s4">${mathSymbol('divide')}</div>
+${v.stat?.placement === 'band' ? statBand(v.stat) : ''}
+  <section class="photo">
+    <div class="shot">
+      <div class="frame"><img src="${photo}" alt="Teacher and pupil pointing at area formulas on a classroom blackboard"></div>
+      <div class="sym y s1">${mathSymbol('plus')}</div>
+      <div class="sym n s2">${mathSymbol('minus')}</div>
+      <div class="sym n s3">${mathSymbol('times')}</div>
+      <div class="sym y s4">${mathSymbol('divide')}</div>
+    </div>${v.stat?.placement === 'tile' ? statTile(v.stat) : ''}
   </section>
 
   ${offer(v)}
-${v.review ? reviewCard(v.review) : ''}
+${v.review ? reviewCard(v.review, v.stat) : ''}
 
   </div>
 

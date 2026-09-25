@@ -13,6 +13,9 @@ const review = {
   by: 'Former A-Level student',
 };
 
+// results claim; add `stat: { ...results, placement: 'tile' | 'band' | 'review' }` to a version to show it
+export const results = { figure: '90%+', lead: 'of our students have achieved', strong: 'grade 7 or above', tail: 'at GCSE' };
+
 const fixedTimes = [
   { day: 'Monday', time: '6pm–8pm' },
   { day: 'Saturday', time: '2pm–4pm' },
@@ -47,8 +50,6 @@ export const versions = [
     where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),
-    // optional extras: a results banner across the foot of the photo, and a review above the footer
-    stat: { figure: '90%+', lines: ['of our students have achieved', 'grade 7 or above at GCSE'] },
     review,
   },
 ];
