@@ -8,6 +8,9 @@ Three versions of the maths tutoring flier, one per venue. Finished files are in
 | `v2-chardon-house` | Singapore Road (1–2 Chardon House), West Ealing, W13 0EP | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
 | `v3-west-ealing-library` | West Ealing Community Library (opposite Sainsbury's) | £15 (was £25) | Monday 6pm–8pm, Saturday 2pm–4pm |
 
+Version 3 also has a results banner (90%+ of students at grade 7 or above at GCSE) and a 5-star
+review. These are the optional `stat` and `review` fields in `src/versions.mjs`, so any version can use them.
+
 Each version comes in three files:
 
 - `*.png`: A4 at 300 dpi. Use this for WhatsApp, social media and email.

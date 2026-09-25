@@ -65,6 +65,19 @@ const whenCard = (w) => {
   </div>`;
 };
 
+const statBanner = (st) => `
+    <div class="stat"><span class="fig">${esc(st.figure)}</span><span class="txt">${st.lines.map(esc).join('<br>')}</span></div>`;
+
+const reviewCard = (r) => `
+  <section class="review">
+    <div class="qm">${icon('quotes')}</div>
+    <div>
+      <div class="stars">${icon('star').repeat(5)}<span>5-star reviews</span></div>
+      <p class="quote">“${esc(r.quote)}”</p>
+      <div class="by">${esc(r.by)}</div>
+    </div>
+  </section>`;
+
 const offer = (v) => {
   if (v.prices.length > 1) {
     return `
@@ -142,7 +155,8 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 .burst.right { transform: scaleX(-1); }
 
 /* classroom photo + floating maths symbols */
-.photo { position: relative; flex: 1 1 0; min-height: 360px; max-height: 468px; display: flex; flex-direction: column; margin: 18px var(--side) 0; }
+.photo { position: relative; flex: 1 1 0; min-height: 300px; max-height: 468px; display: flex; flex-direction: column; margin: 18px var(--side) 0; }
+.photo.has-stat { margin-bottom: 30px; }
 .photo .frame { flex: 1; border-radius: 18px; overflow: hidden; box-shadow: 7px 8px 0 var(--yellow); }
 .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .sym { position: absolute; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #fff; display: grid; place-items: center; box-shadow: 0 3px 0 rgba(11,26,59,.18); }
@@ -156,6 +170,21 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 
 /* offer: prices + where/when */
 .offer { margin: 26px var(--side) 0; }
+
+/* results banner straddling the foot of the photo */
+.stat { position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; white-space: nowrap; background: var(--navy); color: #fff; border: 3px solid var(--yellow); border-radius: 16px; padding: 7px 24px 7px 20px; box-shadow: 0 5px 0 rgba(11,26,59,.18); }
+.stat .fig { font-weight: 900; font-size: 42px; letter-spacing: -1.2px; line-height: 1; color: var(--yellow); }
+.stat .txt { font-weight: 700; font-size: 15px; line-height: 1.25; }
+
+/* review */
+.review { position: relative; margin: 16px var(--side) 0; border: 2px solid var(--navy); border-radius: 16px; padding: 12px 84px 11px; text-align: center; }
+.review .qm { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; }
+.review .qm .icon { width: 29px; height: 29px; fill: var(--navy); }
+.stars { display: flex; align-items: center; justify-content: center; gap: 2px; }
+.stars .icon { width: 17px; height: 17px; fill: var(--yellow); }
+.stars span { margin-left: 8px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+.review .quote { font-size: 17px; font-weight: 700; line-height: 1.3; margin-top: 4px; text-wrap: balance; }
+.review .by { font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 3px; }
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .price-card { border: 2px solid var(--navy); border-radius: 14px; overflow: hidden; text-align: center; background: #fff; box-shadow: 0 4px 0 rgba(11,26,59,.12); }
 .price-card .head { background: var(--navy); color: #fff; padding: 6px 8px 6px; }
@@ -242,8 +271,8 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
     </div>
   </section>
 
-  <section class="photo">
-    <div class="frame"><img src="${photo}" alt="Teacher and pupil pointing at area formulas on a classroom blackboard"></div>
+  <section class="photo${v.stat ? ' has-stat' : ''}">
+    <div class="frame"><img src="${photo}" alt="Teacher and pupil pointing at area formulas on a classroom blackboard"></div>${v.stat ? statBanner(v.stat) : ''}
     <div class="sym y s1">${mathSymbol('plus')}</div>
     <div class="sym n s2">${mathSymbol('minus')}</div>
     <div class="sym n s3">${mathSymbol('times')}</div>
@@ -251,6 +280,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
   </section>
 
   ${offer(v)}
+${v.review ? reviewCard(v.review) : ''}
 
   </div>
 

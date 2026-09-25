@@ -39,6 +39,12 @@ export const versions = [
     where: { title: 'West Ealing Community Library', detail: 'Opposite Sainsbury’s' },
     when: { flexible: false, slots: fixedTimes },
     qr: whatsapp('West Ealing Library'),
+    // optional extras: a results banner across the foot of the photo, and a review above the footer
+    stat: { figure: '90%+', lines: ['of our students have achieved', 'grade 7 or above at GCSE'] },
+    review: {
+      quote: 'I received an A* in A-Level Maths and am now at UCL, thanks to Highview Tutors.',
+      by: 'Former A-Level student',
+    },
   },
 ];
 

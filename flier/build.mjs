@@ -31,13 +31,13 @@ try {
     // Layout guard: fail the build if the content runs into the footer or a section spills off the page.
     const clash = await page.evaluate(() => {
       const footerTop = document.querySelector('.footer').getBoundingClientRect().top;
-      const last = document.querySelector('.offer').getBoundingClientRect().bottom;
+      const last = document.querySelector('.main > :last-child').getBoundingClientRect().bottom;
       const pageRect = document.querySelector('.page').getBoundingClientRect();
-      const wide = [...document.querySelectorAll('.main > *, .offer *, .footer *')]
+      const wide = [...document.querySelectorAll('.main > *, .offer *, .stat, .review *, .footer *')]
         .filter((el) => { const r = el.getBoundingClientRect(); return r.width && (r.right > pageRect.right + 0.5 || r.left < pageRect.left - 0.5); })
         .map((el) => el.className.baseVal ?? el.className);
       // content spilling out of its own card (e.g. a price too wide for the box)
-      const spill = [...document.querySelectorAll('.offer div')]
+      const spill = [...document.querySelectorAll('.offer div, .review div')]
         .filter((el) => el.scrollWidth > el.clientWidth + 1)
         .map((el) => el.className);
       return { gap: footerTop - last, wide, spill };
