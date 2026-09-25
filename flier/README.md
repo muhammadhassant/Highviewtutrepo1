@@ -23,9 +23,8 @@ so you can see which flier each enquiry came from.
 ## Editing and rebuilding
 
 Prices, venues, times and QR messages are in `src/versions.mjs`. The layout is in
-`src/template.mjs`. The flier uses `assets/classroom-photo-tutor.jpg`, which is the stock classroom
-photo (`assets/classroom-photo.jpg`) with the tutor's own head, from a professional headshot, in place of
-the teacher. At 1069 px wide it prints at about 145 dpi.
+`src/template.mjs`. The classroom photo is `assets/classroom-photo.jpg`: replace that file
+(same name) with a higher-resolution copy for sharper prints. At 1069 px wide it prints at about 145 dpi.
 
 ```sh
 npm install
