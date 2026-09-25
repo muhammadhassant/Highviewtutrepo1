@@ -65,9 +65,6 @@ const whenCard = (w) => {
   </div>`;
 };
 
-const credLine = (c) => `
-    <div class="cred"><span class="ic">${icon('graduation-cap')}</span><span>${esc(c.lead)} <b>${esc(c.strong)}</b></span></div>`;
-
 const statBanner = (st) => `
     <div class="stat"><span class="fig">${esc(st.figure)}</span><span class="txt">${st.lines.map(esc).join('<br>')}</span></div>`;
 
@@ -156,10 +153,6 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 .banner .y { color: var(--yellow); }
 .burst { width: 24px; height: 28px; stroke: var(--yellow); }
 .burst.right { transform: scaleX(-1); }
-.cred { display: inline-flex; align-items: center; gap: 10px; margin-top: 11px; background: var(--cream); border-radius: 999px; padding: 3px 20px 3px 3px; font-size: 15px; font-weight: 500; }
-.cred .ic { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: grid; place-items: center; }
-.cred .icon { width: 17px; height: 17px; fill: var(--yellow); }
-.cred b { font-weight: 800; }
 
 /* classroom photo + floating maths symbols */
 .photo { position: relative; flex: 1 1 0; min-height: 260px; max-height: 468px; display: flex; flex-direction: column; margin: 18px var(--side) 0; }
@@ -277,7 +270,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
       ${burst('left')}
       <div class="banner"><span>Ages <span class="y">7–17</span></span><span class="sep"></span><span>Online &amp; in West Ealing</span></div>
       ${burst('right')}
-    </div>${v.credential ? credLine(v.credential) : ''}
+    </div>
   </section>
 
   <section class="photo${v.stat ? ' has-stat' : ''}">
