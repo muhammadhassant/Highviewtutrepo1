@@ -77,7 +77,7 @@ const reviewCard = (r) => `
     <div>
       <div class="stars">${icon('star').repeat(5)}<span>5-star reviews</span></div>
       <p class="quote">“${esc(r.quote)}”</p>
-      <div class="by">${esc(r.by)}</div>
+      <div class="by">${r.name ? `<b>${esc(r.name)}</b><span class="dot">·</span>` : ''}${esc(r.by)}</div>
     </div>
   </section>`;
 
@@ -191,7 +191,9 @@ body { font-family: 'Poppins', sans-serif; color: var(--navy); -webkit-print-col
 .stars .icon { width: 17px; height: 17px; fill: var(--yellow); }
 .stars span { margin-left: 8px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
 .review .quote { font-size: 17px; font-weight: 700; line-height: 1.3; margin-top: 4px; text-wrap: balance; }
-.review .by { font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+.review .by { font-size: 12.5px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+.review .by b { font-weight: 700; color: var(--navy); }
+.review .by .dot { margin: 0 7px; color: var(--gold); font-weight: 800; }
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .price-card { border: 2px solid var(--navy); border-radius: 14px; overflow: hidden; text-align: center; background: #fff; box-shadow: 0 4px 0 rgba(11,26,59,.12); }
 .price-card .head { background: var(--navy); color: #fff; padding: 6px 8px 6px; }

@@ -11,8 +11,9 @@ Three versions of the maths tutoring flier, one per venue. Finished files are in
 All versions say "Our tutors are university lecturers and professionals" under the Ages banner
 (the `credential` field in `src/versions.mjs`; delete it from a version to hide it there).
 
-Version 3 also has a results banner (90%+ of students at grade 7 or above at GCSE) and a 5-star
-review. These are the optional `stat` and `review` fields in `src/versions.mjs`, so any version can use them.
+Versions 1 and 3 show Mustafa Ahmed's 5-star review above the footer, and version 3 also has a
+results banner (90%+ of students at grade 7 or above at GCSE). These are the optional `review` and
+`stat` fields in `src/versions.mjs`, so any version can use them.
 
 Each version comes in three files:
 

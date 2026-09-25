@@ -9,6 +9,13 @@ const whatsapp = (note) => `https://wa.me/${PHONE_INTL}?text=${encodeURIComponen
 // shown under the Ages / Online banner; delete `credential` from a version to hide it there
 const credential = { lead: 'Our tutors are', strong: 'university lecturers and professionals' };
 
+// student review, shown above the footer on the versions that include `review`
+const review = {
+  quote: 'I received an A* in A-Level Maths and am now at UCL, thanks to Highview Tutors.',
+  name: 'Mustafa Ahmed',
+  by: 'Former A-Level student',
+};
+
 const fixedTimes = [
   { day: 'Monday', time: '6pm–8pm' },
   { day: 'Saturday', time: '2pm–4pm' },
@@ -27,6 +34,7 @@ export const versions = [
     when: { flexible: true, title: 'Weekdays and weekends', detail: 'Flexible timings. Enquire to book.' },
     qr: whatsapp('Highview Road'),
     credential,
+    review,
   },
   {
     id: 'v2-chardon-house',
@@ -47,10 +55,7 @@ export const versions = [
     credential,
     // optional extras: a results banner across the foot of the photo, and a review above the footer
     stat: { figure: '90%+', lines: ['of our students have achieved', 'grade 7 or above at GCSE'] },
-    review: {
-      quote: 'I received an A* in A-Level Maths and am now at UCL, thanks to Highview Tutors.',
-      by: 'Former A-Level student',
-    },
+    review,
   },
 ];
 
