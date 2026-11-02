@@ -133,7 +133,9 @@ ws[f"L{FIRST}"].comment = Comment(
 ws[f"A{FIRST+1}"] = date(2026, 11, 2)
 ws[f"B{FIRST+1}"] = "Honda Jazz 1.4 (2003)"
 ws[f"C{FIRST+1}"] = 125967
-ws[f"N{FIRST+1}"] = "Fuel light on again (dashboard photo). Add price per litre and amount paid once refuelled."
+ws[f"N{FIRST+1}"] = ("Fuel light on again (dashboard photo). Tank affected by known faults: slight fuel leak "
+                         "and exhaust blowing (racing-car noise) since catalytic converter replacement, partly patched. "
+                         "Add price per litre and amount paid once refuelled.")
 
 dv = DataValidation(type="decimal", operator="greaterThan", formula1=0, allow_blank=True)
 ws.add_data_validation(dv); dv.add(f"C{FIRST}:E{LAST}")
