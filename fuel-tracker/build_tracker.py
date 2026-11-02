@@ -130,6 +130,11 @@ ws[f"L{FIRST}"].comment = Comment(
     "Estimate only: gallons added x the MPG on Settings!B10 "
     "(real-world benchmark until your first leg is logged).", "Tracker")
 
+ws[f"A{FIRST+1}"] = date(2026, 11, 2)
+ws[f"B{FIRST+1}"] = "Honda Jazz 1.4 (2003)"
+ws[f"C{FIRST+1}"] = 125967
+ws[f"N{FIRST+1}"] = "Fuel light on again (dashboard photo). Add price per litre and amount paid once refuelled."
+
 dv = DataValidation(type="decimal", operator="greaterThan", formula1=0, allow_blank=True)
 ws.add_data_validation(dv); dv.add(f"C{FIRST}:E{LAST}")
 dvd = DataValidation(type="date", operator="greaterThan", formula1="DATE(2000,1,1)", allow_blank=True)
@@ -148,9 +153,9 @@ items = [
     ("Total litres bought", f"=SUM({rng('F')})", LIT),                                 # B6
     ("Miles over completed legs", f"=SUM({rng('H')})", MILES),                         # B7
     # fuel burned over completed legs = everything bought except the latest fill, still in the tank
-    ("Litres burned over completed legs", f'=IF(B3<2,"",B6-INDEX({rng("F")},B3))', LIT),  # B8
+    ("Litres burned over completed legs", f'=IF(B3<2,"",B6-N(INDEX({rng("F")},B3)))', LIT),  # B8
     ("Average MPG (UK)", f'=IF(OR(B4=0,N(B8)=0),"",B7/(B8/Settings!$B$6))', MPG),      # B9
-    ("Average cost per mile (£)", f'=IF(B4=0,"",(B5-INDEX({rng("E")},B3))/B7)', '£0.000'),  # B10
+    ("Average cost per mile (£)", f'=IF(B4=0,"",(B5-N(INDEX({rng("E")},B3)))/B7)', '£0.000'),  # B10
     ("Best leg MPG", f'=IF(B4=0,"",MAX({rng("I")}))', MPG),                            # B11
     ("Worst leg MPG", f'=IF(B4=0,"",MIN({rng("I")}))', MPG),                           # B12
     ("Latest odometer", f'=IF(B3=0,"",INDEX({rng("C")},B3))', MILES),                  # B13
